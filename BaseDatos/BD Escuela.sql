@@ -34,3 +34,19 @@ begin
 	select * from grupo where idAlumno = vidAlumno;
 end
 //
+
+
+drop procedure if exists insertarAlumno;
+delimiter //
+create procedure insertarAlumno 
+(
+  in vnombre varchar(40)
+  , in vgrupo varchar(10)
+  , in vpromedio float
+)
+begin
+	insert into grupo values (null,vnombre,vgrupo,vpromedio);
+end
+//
+
+call insertarAlumno ('Domingo Luna','ITI-1200',8.5);
